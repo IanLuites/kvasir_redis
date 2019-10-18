@@ -1,0 +1,10 @@
+%{
+  "common_x": {:hex, :common_x, "0.2.0", "d220e1e1f301f66dd570f887e7432ca307bd45f72b4544dd44a129031ad39303", [:mix], [], "hexpm"},
+  "jason": {:hex, :jason, "1.1.2", "b03dedea67a99223a2eaf9f1264ce37154564de899fd3d8b9a21b1a6fd64afe7", [:mix], [{:decimal, "~> 1.0", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm"},
+  "kvasir": {:git, "https://github.com/IanLuites/kvasir", "3559a3f004c6d442635ad4b5bb14e13e15785dd8", [branch: "release/v1.0"]},
+  "kvasir_agent": {:git, "https://github.com/IanLuites/kvasir_agent", "d1f2c70562d09d124994d66ffa6f9813e2bc6813", [branch: "release/v1.0"]},
+  "poolboy": {:hex, :poolboy, "1.5.2", "392b007a1693a64540cead79830443abf5762f5d30cf50bc95cb2c1aaafa006b", [:rebar3], [], "hexpm"},
+  "raditz": {:hex, :raditz, "0.0.3", "b7a91ddc3dbd2a7612f07dd1cb312108884d7cf2d7609c3e8390f21c85920d61", [:mix], [{:poolboy, "~> 1.5", [hex: :poolboy, repo: "hexpm", optional: false]}, {:redix, "~> 0.10", [hex: :redix, repo: "hexpm", optional: false]}], "hexpm"},
+  "redix": {:hex, :redix, "0.10.2", "a9eabf47898aa878650df36194aeb63966d74f5bd69d9caa37babb32dbb93c5d", [:mix], [{:telemetry, "~> 0.4.0", [hex: :telemetry, repo: "hexpm", optional: false]}], "hexpm"},
+  "telemetry": {:hex, :telemetry, "0.4.0", "8339bee3fa8b91cb84d14c2935f8ecf399ccd87301ad6da6b71c09553834b2ab", [:rebar3], [], "hexpm"},
+}
