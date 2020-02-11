@@ -30,6 +30,13 @@ if Code.ensure_loaded?(Kvasir.Agent) do
       end
     end
 
+    @impl Kvasir.Agent.Cache
+    def delete(agent, id) do
+      Redis.command(agent, ["DEL", key(agent, id)])
+
+      :ok
+    end
+
     @spec key(module, term) :: String.t()
     defp key(agent, id), do: "cache:#{inspect(agent)}:#{id}"
   end
