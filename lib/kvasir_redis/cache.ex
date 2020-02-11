@@ -4,13 +4,15 @@ if Code.ensure_loaded?(Kvasir.Agent) do
     @behaviour Kvasir.Agent.Cache
 
     @impl Kvasir.Agent.Cache
-    def init(agent, opts), do: {:ok, Redis.child_spec(agent, opts)}
+    def init(agent, opts), do: {:ok, Redis.child_spec(Module.concat(__MODULE__, agent), opts)}
 
     @impl Kvasir.Agent.Cache
     def save(agent, id, data, offset) do
+      pid = Module.concat(__MODULE__, agent)
+
       with {:ok, "OK"} <-
              Redis.command(
-               agent,
+               pid,
                [
                  "SET",
                  key(agent, id),
@@ -22,7 +24,9 @@ if Code.ensure_loaded?(Kvasir.Agent) do
 
     @impl Kvasir.Agent.Cache
     def load(agent, id) do
-      with {:ok, result} when result != nil <- Redis.command(agent, ["GET", key(agent, id)]),
+      pid = Module.concat(__MODULE__, agent)
+
+      with {:ok, result} when result != nil <- Redis.command(pid, ["GET", key(agent, id)]),
            {offset, data} <- :erlang.binary_to_term(result) do
         {:ok, offset, data}
       else
@@ -32,7 +36,8 @@ if Code.ensure_loaded?(Kvasir.Agent) do
 
     @impl Kvasir.Agent.Cache
     def delete(agent, id) do
-      Redis.command(agent, ["DEL", key(agent, id)])
+      pid = Module.concat(__MODULE__, agent)
+      Redis.command(pid, ["DEL", key(agent, id)])
 
       :ok
     end
