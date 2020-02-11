@@ -59,7 +59,7 @@ defmodule Kvasir.Redis.MixProject do
       {:kvasir, git: "https://github.com/IanLuites/kvasir", branch: "release/v1.0"},
       {:kvasir_agent,
        git: "https://github.com/IanLuites/kvasir_agent", branch: "release/v1.0", optional: true},
-      {:raditz, "~> 0.0.3"}
+      {:raditz, "~> 0.0.7"}
     ]
   end
 end
