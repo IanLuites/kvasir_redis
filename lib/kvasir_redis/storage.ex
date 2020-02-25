@@ -1,4 +1,5 @@
 defmodule Kvasir.Storage.Redis do
+  alias Kvasir.Offset
   alias Raditz.PoolBoy, as: Redis
   @behaviour Kvasir.Storage
   require Logger
@@ -20,11 +21,16 @@ defmodule Kvasir.Storage.Redis do
   end
 
   @impl Kvasir.Storage
+  def offsets(_name, topic) do
+    Enum.reduce(0..(topic.partitions - 1), Offset.create(), &Offset.set(&2, &1, 0))
+  end
+
+  @impl Kvasir.Storage
   def contains?(_name, _topic, _offset) do
   end
 
   @impl Kvasir.Storage
-  def freeze(redis, event) do
+  def freeze(redis, _topic, event) do
     {:ok,
      %{
        meta:

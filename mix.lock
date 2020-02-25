@@ -1,8 +1,8 @@
 %{
   "common_x": {:hex, :common_x, "0.2.3", "5742aed50ca1d6cd6e25b744e79095e3ef3869e950053de4fb9195abae9eca0b", [:mix], [], "hexpm", "8dc1c235751cc9e626c9cd210ad2aaacfaf4ed58c6c7ae0008ca1db55502c760"},
   "jason": {:hex, :jason, "1.1.2", "b03dedea67a99223a2eaf9f1264ce37154564de899fd3d8b9a21b1a6fd64afe7", [:mix], [{:decimal, "~> 1.0", [hex: :decimal, repo: "hexpm", optional: true]}], "hexpm", "fdf843bca858203ae1de16da2ee206f53416bbda5dc8c9e78f43243de4bc3afe"},
-  "kvasir": {:git, "https://github.com/IanLuites/kvasir", "b8319d94df170b263af869cfb301dd294ba44eb1", [branch: "release/v1.0"]},
-  "kvasir_agent": {:git, "https://github.com/IanLuites/kvasir_agent", "4d5e0354ff62f817ebbfb029737be1a5b6f528ac", [branch: "release/v1.0"]},
+  "kvasir": {:git, "https://github.com/IanLuites/kvasir", "0cdec5799d03fcb455933e09c4e5ec1e7946b354", [branch: "release/v1.0"]},
+  "kvasir_agent": {:git, "https://github.com/IanLuites/kvasir_agent", "26f62d9e51ce6753eeb0553a2dd965aa87a3ba17", [branch: "release/v1.0"]},
   "msgpax": {:hex, :msgpax, "2.2.4", "7b3790ef684089076b63c0f08c2f4b079c6311daeb006b69e4ed2bf67518291e", [:mix], [{:plug, "~> 1.0", [hex: :plug, repo: "hexpm", optional: true]}], "hexpm", "b351b6d992d79624a8430a99d21a41b36b1b90edf84326a294e9f4a2de11f089"},
   "poolboy": {:hex, :poolboy, "1.5.2", "392b007a1693a64540cead79830443abf5762f5d30cf50bc95cb2c1aaafa006b", [:rebar3], [], "hexpm", "dad79704ce5440f3d5a3681c8590b9dc25d1a561e8f5a9c995281012860901e3"},
   "raditz": {:hex, :raditz, "0.0.7", "43c03af098ba10655fb8eb7b90cea5a14b7c831976968d47601d4062ec6dbe01", [:mix], [{:poolboy, "~> 1.5", [hex: :poolboy, repo: "hexpm", optional: false]}, {:redix, "~> 0.10", [hex: :redix, repo: "hexpm", optional: false]}], "hexpm", "90359dd45da42634e551fc412fd07317b8e2e8efa1f923c10a98538ec65f3072"},
