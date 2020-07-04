@@ -1,12 +1,9 @@
 if Code.ensure_loaded?(Kvasir.Projector) do
   defmodule Kvasir.Projector.Cache.Redis do
     alias Raditz.PoolBoy, as: Redis
-    @behaviour Kvasir.Agent.Cache
 
-    @impl Kvasir.Agent.Cache
     def init(agent, opts), do: {:ok, Redis.child_spec(Module.concat(__MODULE__, agent), opts)}
 
-    @impl Kvasir.Agent.Cache
     def save(agent, id, data, offset) do
       pid = Module.concat(__MODULE__, agent)
 
@@ -22,7 +19,6 @@ if Code.ensure_loaded?(Kvasir.Projector) do
            do: :ok
     end
 
-    @impl Kvasir.Agent.Cache
     def load(agent, id) do
       pid = Module.concat(__MODULE__, agent)
 
@@ -34,7 +30,6 @@ if Code.ensure_loaded?(Kvasir.Projector) do
       end
     end
 
-    @impl Kvasir.Agent.Cache
     def delete(agent, id) do
       pid = Module.concat(__MODULE__, agent)
       Redis.command(pid, ["DEL", key(agent, id)])
